@@ -72,23 +72,212 @@
                     <div class="crud-body__text">
                         <div class="crud-body__code">
                             <p>Код</p>
-                            <pre>
-                            {
-                                custom_id = ...;
-                                requisites = ...;
-                                rub_amount = ...;
-                                live_time = ...;
-                                direction = ...;
-                            }
-                            </pre>
+<pre>
+{
+        custom_id = ...;
+        requisites = ...;
+        rub_amount = ...;
+        live_time = ...;
+        direction = ...;
+}
+</pre>
                         </div>
                         <div class="crud-body__description">
                             <p>Описание</p>
-                            <pre>
-                            Если указан параметр {live_time} - то 
-                            уйдет заявка через время. Если статус 
-                            “Canseled” то она отменена.
-                            </pre>
+<pre>
+Если указан параметр {live_time} - то 
+уйдет заявка через время. Если статус 
+“Canseled” то она отменена.
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <hr class="separator">
+    </div>
+
+    <section>
+        <div class="container">
+            <h2>Подтверждение оплаты заявки</h2>
+            <p><span>Обращаться на: daaweb.com/confirmOperatorExchangeOrderGroup/</span></p>
+
+            <div class="crud-container">
+                <div class="crud-header">
+                    <div class="crud-header__type-post">
+                        <p>POST</p>
+                        <p>/custom_id/{id_заявки}/</p>
+                    </div>
+                    <div class="crud-header__arrow">
+                        <img src="./img/arrow.svg" alt="arrow">
+                    </div>
+                </div>
+                <div class="crud-body">
+                    <div class="crud-body__text">
+                        <div class="crud-body__code">
+                            <p>Код</p>
+<pre>
+{
+        custom_id = ...;
+}
+</pre>
+                        </div>
+                        <div class="crud-body__description">
+                            <p>Описание</p>
+<pre>
+Подтвердить оплату группы заявок 
+можно только при условии, что все 
+заявки в этой группе закрыты 
+трейдерами
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <hr class="separator">
+    </div>
+
+    <section>
+        <div class="container">
+            <h2>Подтверждение оплаты заявки</h2>
+            <p><span>Обращаться на: daaweb.com/confirmOperatorExchangeOrderGroup/</span></p>
+
+            <div class="crud-container">
+                <div class="crud-header">
+                    <div class="crud-header__type-get">
+                        <p>GET</p>
+                        <p>/custom_id/{id_заявки}/</p>
+                    </div>
+                    <div class="crud-header__arrow">
+                        <img src="./img/arrow.svg" alt="arrow">
+                    </div>
+                </div>
+                <div class="crud-body">
+                    <div class="crud-body__text">
+                        <div class="crud-body__code">
+                            <p>Код</p>
+<pre>
+{
+        status = ...;
+        mode = ...;
+        amount = ...;
+        page_number = ...;
+        custom_id = ...;
+        requisites = ...;
+        date = ...;
+}
+</pre>
+                        </div>
+                        <div class="crud-body__description">
+                            <p>Описание</p>
+<pre>
+Возвращает список заявок, поля зависит от
+выбранного режима дробления.
+
+Возможные статусы у заявок: Paid - Новая
+заявка, Ready - Оплачена полностью, ожидает 
+подтверждения (только у групп), Finished - 
+завершена.
+    
+Поле “trader” указывает, взял ли заявку
+трейдер или нет (только при mode = alone).
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <hr class="separator">
+    </div>
+
+    <section>
+        <div class="container">
+            <h2>Подтверждение оплаты заявки</h2>
+            <p><span>Обращаться на: daaweb.com/confirmOperatorExchangeOrderGroup/</span></p>
+
+            <div class="crud-container">
+                <div class="crud-header">
+                    <div class="crud-header__type-get">
+                        <p>GET</p>
+                        <p>/custom_id/{id_заявки}/</p>
+                    </div>
+                    <div class="crud-header__arrow">
+                        <img src="./img/arrow.svg" alt="arrow">
+                    </div>
+                </div>
+                <div class="crud-body">
+                    <div class="crud-body__text">
+                        <div class="crud-body__code">
+                            <p>Код</p>
+<pre>
+{
+        group_custom_id = ...;
+}
+</pre>
+                        </div>
+                        <div class="crud-body__description">
+                            <p>Описание</p>
+<pre>
+{'status': 'success', ‘deleted_orders’: 
+‘1,2,3,4’, ‘not_deleted_orders’: ‘1,2,3,4’} при успешном запросе.
+
+Где ‘deleted_orders‘ - список заявок, которые были успешно 
+удалены,‘not_deleted_orders’ - список заявок, которые не были
+удалены, по какой-либо ошибке.
+    
+При удалении группы проверяется каждая заявка в ней. Она 
+будет удалена только в том случае, если ни один трейдер ее 
+еще не принял в обработку и не отметил успешно оплаченной.
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <hr class="separator">
+    </div>
+
+    <section>
+        <div class="container">
+            <h2>Подтверждение оплаты заявки</h2>
+            <p><span>Обращаться на: daaweb.com/confirmOperatorExchangeOrderGroup/</span></p>
+
+            <div class="crud-container">
+                <div class="crud-header">
+                    <div class="crud-header__type-get">
+                        <p>GET</p>
+                        <p>/custom_id/{id_заявки}/</p>
+                    </div>
+                    <div class="crud-header__arrow">
+                        <img src="./img/arrow.svg" alt="arrow">
+                    </div>
+                </div>
+                <div class="crud-body">
+                    <div class="crud-body__text">
+                        <div class="crud-body__code">
+                            <p></p>
+<pre>
+
+</pre>
+                        </div>
+                        <div class="crud-body__description">
+                            <p>Описание</p>
+<pre>
+{"status": "success", "curse": "2 786 424"}
+</pre>
                         </div>
                     </div>
                 </div>
