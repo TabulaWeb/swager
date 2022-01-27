@@ -1,0 +1,11 @@
+:root {
+    --main-bg-color: linear-gradient(90deg, #1B2531 0%, #212A35 100%);
+    --header-bg-color: linear-gradient(90.1deg, rgba(51, 62, 84, 0.7) 0%, rgba(66, 78, 102, 0.7) 100%, rgba(83, 97, 123, 0.7) 100%);;
+    --separator-bg-color: rgba(50, 62, 84, 0.7);
+    --text-color: rgba(255, 255, 255, 1);
+    --span-color: rgba(255, 239, 92, 1);
+    --button-post: linear-gradient(135deg, #208FE5 0%, #249FFD 100%);
+    --button-get: rgba(107, 188, 52, 1);
+    --crud-head: linear-gradient(90.1deg, rgba(51, 62, 84, 0.7) 0%, rgba(66, 78, 102, 0.7) 100%, rgba(83, 97, 123, 0.7) 100%);
+    --crud-body: rgba(50, 62, 84, 1);
+}

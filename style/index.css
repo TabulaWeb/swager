@@ -1,0 +1,7 @@
+/* default */
+@import './reset.css';
+@import './variable.css';
+@import './interface.css';
+
+/* home */
+@import './home.css';

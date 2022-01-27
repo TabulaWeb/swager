@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/index.css">
+    <title>swager</title>
+</head>
+<body>
+    <div class="title">
+        <h1>API по откупам</h1>
+    </div>
+    <header>
+        <div class="container">
+            <div class="header">
+                <div class="header-search">
+                    <input type="text">
+                    <img src="./img/search.svg" alt="search">
+                </div>
+                <div class="header-burger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section>
+        <div class="container">
+            <h2>Начало работы</h2>
+            <p><span>{API_url} для обращений - daaweb.com/</span></p>
+            <p>Все запросы должны содержать заголовок Autorization: Bearer {token}</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <hr class="separator">
+    </div>
+    
+    <section>
+        <div class="container">
+            <h2>Примечание</h2>
+            <p>В запросах фигурируют поля <span>custom_id</span> и <span>exchange_id.</span></p>
+            <p><span>custom_id</span> - идентификатор группы заявок. С одним <span>custom_id</span> может быть много заявок, это поле задается Вами при создании заявки. При сумме в фиате свыше 50к - заявка автоматически дробится на меньшие суммы и объединяется в группу по <span>custom_id</span></p>
+            <p><span>exchange_id</span> - уникальный идентификатор каждой конкретной заявки</p>
+            <p>По <span>custom_id</span> группы помечаются успешно оплаченными, по <span>exchange_id</span> - заявки удаляются</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <hr class="separator">
+    </div>
+
+    <section>
+        <div class="container">
+            <h2>Создание заявки на продажу BTC</h2>
+            <p><span>Обращаться на: daaweb.com/createEx0rder/</span></p>
+
+            <div class="crud-container">
+                <div class="crud-header">
+                    <div class="crud-header__type-post">
+                        <p>POST</p>
+                        <p>/custom_id/{id_заявки}/</p>
+                    </div>
+                    <div class="crud-header__arrow">
+                        <img src="./img/arrow.svg" alt="arrow">
+                    </div>
+                </div>
+                <div class="crud-body">
+                    <div class="crud-body__text">
+                        <div class="crud-body__code">
+                            <p>Код</p>
+                            <pre>
+                            {
+                                custom_id = ...;
+                                requisites = ...;
+                                rub_amount = ...;
+                                live_time = ...;
+                                direction = ...;
+                            }
+                            </pre>
+                        </div>
+                        <div class="crud-body__description">
+                            <p>Описание</p>
+                            <pre>
+                            Если указан параметр {live_time} - то 
+                            уйдет заявка через время. Если статус 
+                            “Canseled” то она отменена.
+                            </pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="./script/index.js"></script>
+</body>
+</html>

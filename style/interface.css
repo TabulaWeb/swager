@@ -1,0 +1,95 @@
+@font-face {
+    font-family: 'Roboto-bold';
+    src: url('../fonts/Roboto-Bold.ttf')
+}
+
+@font-face {
+    font-family: 'Roboto-Medium';
+    src: url('../fonts/Roboto-Medium.ttf')
+}
+
+@font-face {
+    font-family: 'Roboto-Regular';
+    src: url('../fonts/Roboto-Regular.ttf')
+}
+
+@font-face {
+    font-family: 'Code';
+    src: url('../fonts/SourceCodePro-Regular.ttf')
+}
+
+body {
+    background: var(--main-bg-color);
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    padding: 0 4%;
+    margin: 0 auto;
+}
+
+.separator {
+    width: 100%;
+    border: 1px solid var(--separator-bg-color);
+    filter: blur(2px);
+}
+
+h1 {
+    font-family: 'Roboto-Bold';
+    font-size: 48px;
+    line-height: 56px;
+    color: var(--text-color);
+}
+
+h2 {
+    font-family: 'Roboto-Bold';
+    font-size: 32px;
+    line-height: 37px;
+    color: var(--text-color);
+
+    margin-bottom: 15px;
+}
+
+p {
+    font-family: 'Roboto-Regular';
+    font-size: 18px;
+    line-height: 21px;
+    color: var(--text-color);
+}
+
+span {
+    color: var(--span-color);
+}
+
+body section:first-child {
+    margin-top: 25px;
+}
+
+section {
+    margin-top: 15px;
+    margin-bottom: 25px;
+}
+
+header {
+    background: var(--header-bg-color);
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+/* burger */
+.header-burger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.header-burger span {
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+}
