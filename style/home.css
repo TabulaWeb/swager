@@ -113,6 +113,8 @@
     background-color: rgba(245, 245, 245, 1);
     border-radius: 3px;
     padding: 25px 100px;
+    padding-left: clamp(25px, 9vw, 100px);
+    padding-right: clamp(25px, 9vw, 100px);
     display: flex;
 }
 
@@ -180,9 +182,9 @@ img.rotation{
     transform: rotate(90deg);
 }
 
-@media screen and (max-width: 440px) {
+@media screen and (max-width: 480px) {
     .header-burger {
         margin-left: 10px;
-
+        position: initial;
     }
 }
