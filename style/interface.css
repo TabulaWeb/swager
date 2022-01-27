@@ -20,6 +20,7 @@
 
 body {
     background: var(--main-bg-color);
+    margin-bottom: 200px;
 }
 
 .container {
@@ -95,6 +96,8 @@ pre {
     width: 28px;
     height: 20px;
     cursor: pointer;
+    position: absolute;
+    right: 0;
 }
 
 .header-burger span {
