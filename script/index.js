@@ -64,6 +64,7 @@ const searchItem = [
     {name: 'создание заявки на продажу btc', link: '#createRequestion'},
     {name: 'подтверждение оплаты заявки', link: '#paymentСonfirmation'},
     {name: 'получение списка заявок', link: '#getApplication'},
+    {name: 'удаление заявки', link: '#deleteApplicationOne'},
     {name: 'удаление группы заявок', link: '#deleteApplication'},
     {name: 'получение актуального курса торговли', link: '#getCourse'},
 ]
