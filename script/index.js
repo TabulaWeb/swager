@@ -19,6 +19,12 @@ window.addEventListener(`resize`, event => {
     console.log(arrayCrudItem)
 }, false);
 
+document.querySelectorAll('.crud-container').forEach((crudItem, crudId, crudArr) => {
+    crudItem.addEventListener('click', function(){
+        crudItem.classList.toggle('open')
+    })
+})
+
 // открываем crud
 document.addEventListener('click', function(event){
     let target = event.target
@@ -29,17 +35,15 @@ document.addEventListener('click', function(event){
         target.classList.toggle('rotation')
 
         document.querySelectorAll('.crud-container').forEach((crudItem, crudId, crudArr) => {
-            crudArr[crudElement].classList.toggle('open')
             let heightContainer = crudArr[crudElement].querySelector('.crud-body').clientHeight + 52
 
             if(crudArr[crudElement].classList.contains('open')){
                 crudArr[crudElement].style.height = `${arrayCrud[crudElement] || heightContainer}px`
             } else {
-                crudArr[crudElement].style.height = '52px'
+                
+                crudArr[crudElement].style.height = '58px'
             }
         })
-
-        
     }
 })
 
