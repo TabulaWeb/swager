@@ -43,6 +43,7 @@ document.addEventListener('click', function(event){
     }
 })
 
+// Меню
 document.addEventListener('click', function(e){
     if(e.target.closest('.header-burger') || e.target.closest('.header-menu')){
         document.querySelector('.header-menu').classList.toggle('open')
@@ -52,4 +53,72 @@ document.addEventListener('click', function(e){
         document.querySelector('.header-burger').classList.remove('open')
     }
     
+    if(e.target.closest('.results-list')){
+        document.querySelector('.results-container').style.display = 'none'
+    }
 })
+
+// Поиск
+const searchItem = [
+    {name: 'начало работы', link: '#beginning'},
+    {name: 'создание заявки на продажу btc', link: '#createRequestion'},
+    {name: 'подтверждение оплаты заявки', link: '#paymentСonfirmation'},
+    {name: 'получение списка заявок', link: '#getApplication'},
+    {name: 'удаление группы заявок', link: '#deleteApplication'},
+    {name: 'получение актуального курса торговли', link: '#getCourse'},
+]
+
+function setList(results){
+    clearList()
+    for (const search of results){
+        const resultItem = document.createElement('a')
+        resultItem.setAttribute('href', search.link)
+        resultItem.classList.add('result-item')
+        const text = document.createTextNode(search.name)
+        resultItem.appendChild(text)
+        list.appendChild(resultItem)
+    }
+
+    if (results.length === 0 ){
+        noResults()
+    }
+}
+
+function clearList(){
+    while (list.firstChild){
+        list.removeChild(list.firstChild)
+    }
+}
+
+function noResults(){
+    const error = document.createElement('p')
+    error.classList.add('error-message')
+    const text = document.createTextNode('Ничего не найдено')
+    error.appendChild(text)
+    list.appendChild(error)
+}
+
+whateverElement.addEventListener("input", (e) => {
+    let value = e.target.value
+
+    if (value && value.trim().length > 0){
+        document.querySelector('.results-container').style.display = 'flex'
+        value = value.trim().toLowerCase()
+        setList(searchItem.filter(search => {
+            return search.name.includes(value)
+        }))
+    } else {
+        clearList()
+        document.querySelector('.results-container').style.display = 'none'
+    }
+})
+
+whateverElement.addEventListener('focus', (e) => {
+    let value = e.target.value
+    if (value && value.trim().length > 0){
+        document.querySelector('.results-container').style.display = 'flex'
+    }
+})
+
+
+
