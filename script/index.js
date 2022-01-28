@@ -14,9 +14,6 @@ window.addEventListener(`resize`, event => {
             element.style.height = `${arrayCrud[elementID]}px`
         }
     })
-
-    console.log(arrayCrud)
-    console.log(arrayCrudItem)
 }, false);
 
 document.querySelectorAll('.crud-container').forEach((crudItem, crudId, crudArr) => {

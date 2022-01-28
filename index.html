@@ -166,7 +166,7 @@
             <div class="crud-container">
                 <div class="crud-header" data-id="2">
                     <div class="crud-header__type-post" data-id="2">
-                        <p data-id="2">GET</p>
+                        <p data-id="2">POST</p>
                         <p data-id="2">/api/deleteExchangeOrder/</p>
                     </div>
                     <div class="crud-header__arrow">
@@ -203,19 +203,69 @@
         <hr class="separator">
     </div>
 
+    <section class="crud" id="deleteApplication">
+        <div class="container">
+            <h2>Удаление группы заявок</h2>
+            <p class="crud-subtitle"><span>Обращаться на: daazweb.com/api/deleteExchangeOrderGroup/</span></p>
+
+            <div class="crud-container">
+                <div class="crud-header" data-id="3">
+                    <div class="crud-header__type-post" data-id="3">
+                        <p data-id="3">POST</p>
+                        <p data-id="3">/api/deleteExchangeOrderGroup/</p>
+                    </div>
+                    <div class="crud-header__arrow">
+                        <img src="./img/arrow.svg" alt="arrow" data-id="3">
+                    </div>
+                </div>
+                <div class="crud-body">
+                    <div class="crud-body__text">
+                        <div class="crud-body__code">
+                            <p>Код</p>
+<pre>
+{
+        group_custom_id = ...;
+}
+</pre>
+                        </div>
+                        <div class="crud-body__description">
+                            <p>Описание</p>
+<pre>
+{'status': 'success', ‘deleted_orders’: 
+‘1,2,3,4’, ‘not_deleted_orders’: ‘1,2,3,4’} при успешном запросе.
+
+Где ‘deleted_orders‘ - список заявок, которые были успешно 
+удалены,‘not_deleted_orders’ - список заявок, которые не были
+удалены, по какой-либо ошибке.
+    
+При удалении группы проверяется каждая заявка в ней. Она 
+будет удалена только в том случае, если ни один трейдер ее 
+еще не принял в обработку и не отметил успешно оплаченной.
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <hr class="separator">
+    </div>
+
     <section class="crud" id="getApplication">
         <div class="container">
             <h2>Получение списка заявок</h2>
             <p class="crud-subtitle"><span>Обращаться на: daazweb.com/api/getExchangeOrdersSeller/</span></p>
 
             <div class="crud-container">
-                <div class="crud-header" data-id="3">
-                    <div class="crud-header__type-get" data-id="3">
-                        <p data-id="3">GET</p>
-                        <p data-id="3">/api/getExchangeOrdersSeller/</p>
+                <div class="crud-header" data-id="4">
+                    <div class="crud-header__type-get" data-id="4">
+                        <p data-id="4">GET</p>
+                        <p data-id="4">/api/getExchangeOrdersSeller/</p>
                     </div>
                     <div class="crud-header__arrow">
-                        <img src="./img/arrow.svg" alt="arrow" data-id="3">
+                        <img src="./img/arrow.svg" alt="arrow" data-id="4">
                     </div>
                 </div>
                 <div class="crud-body">
@@ -247,60 +297,6 @@
     
 Поле “trader” указывает, взял ли заявку
 трейдер или нет (только при mode = alone).
-</pre>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div class="container">
-        <hr class="separator">
-    </div>
-
-    <div class="container">
-        <hr class="separator">
-    </div>
-
-    <section class="crud" id="deleteApplication">
-        <div class="container">
-            <h2>Удаление группы заявок</h2>
-            <p class="crud-subtitle"><span>Обращаться на: daazweb.com/api/deleteExchangeOrderGroup/</span></p>
-
-            <div class="crud-container">
-                <div class="crud-header" data-id="4">
-                    <div class="crud-header__type-get" data-id="4">
-                        <p data-id="4">GET</p>
-                        <p data-id="4">/api/deleteExchangeOrderGroup/</p>
-                    </div>
-                    <div class="crud-header__arrow">
-                        <img src="./img/arrow.svg" alt="arrow" data-id="4">
-                    </div>
-                </div>
-                <div class="crud-body">
-                    <div class="crud-body__text">
-                        <div class="crud-body__code">
-                            <p>Код</p>
-<pre>
-{
-        group_custom_id = ...;
-}
-</pre>
-                        </div>
-                        <div class="crud-body__description">
-                            <p>Описание</p>
-<pre>
-{'status': 'success', ‘deleted_orders’: 
-‘1,2,3,4’, ‘not_deleted_orders’: ‘1,2,3,4’} при успешном запросе.
-
-Где ‘deleted_orders‘ - список заявок, которые были успешно 
-удалены,‘not_deleted_orders’ - список заявок, которые не были
-удалены, по какой-либо ошибке.
-    
-При удалении группы проверяется каждая заявка в ней. Она 
-будет удалена только в том случае, если ни один трейдер ее 
-еще не принял в обработку и не отметил успешно оплаченной.
 </pre>
                         </div>
                     </div>
