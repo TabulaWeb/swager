@@ -23,8 +23,8 @@ window.addEventListener(`resize`, event => {
 document.addEventListener('click', function(event){
     let target = event.target
 
-    if(target.closest('.crud-header__arrow')){
-        let crudElement = target.getAttribute('data-id')
+    if(target.closest('.crud-header')){
+        let crudElement = target?.getAttribute('data-id')
 
         target.classList.toggle('rotation')
 
@@ -41,4 +41,15 @@ document.addEventListener('click', function(event){
 
         
     }
+})
+
+document.addEventListener('click', function(e){
+    if(e.target.closest('.header-burger') || e.target.closest('.header-menu')){
+        document.querySelector('.header-menu').classList.toggle('open')
+        document.querySelector('.header-burger').classList.toggle('open')
+    } else {
+        document.querySelector('.header-menu').classList.remove('open')
+        document.querySelector('.header-burger').classList.remove('open')
+    }
+    
 })

@@ -19,15 +19,28 @@
                     <img src="./img/search.svg" alt="search">
                 </div>
                 <div class="header-burger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                    <div class="header-burger__content">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+
+                <div class="header-menu">
+                    <nav>
+                        <a href="#beginning">Начало работы</a>
+                        <a href="#createRequestion">Создание заявки на продажу BTC</a>
+                        <a href="#paymentСonfirmation">Подтверждение оплаты заявки</a>
+                        <a href="#getApplication">Получение списка заявок</a>
+                        <a href="#deleteApplication">Удаление группы заявок</a>
+                        <a href="#getCourse">Получение актуального курса торговли</a>
+                    </nav>
                 </div>
             </div>
         </div>
     </header>
 
-    <section class="beginning">
+    <section class="beginning" id="beginning">
         <div class="container">
             <h2>Начало работы</h2>
             <p><span>{API_url} для обращений - daaweb.com/</span></p>
@@ -39,7 +52,7 @@
         <hr class="separator">
     </div>
     
-    <section class="note">
+    <section class="note" id="note">
         <div class="container">
             <h2>Примечание</h2>
             <p>В запросах фигурируют поля <span>custom_id</span> и <span>exchange_id.</span></p>
@@ -53,16 +66,16 @@
         <hr class="separator">
     </div>
 
-    <section class="crud">
+    <section class="crud" id="createRequestion">
         <div class="container">
             <h2>Создание заявки на продажу BTC</h2>
             <p class="crud-subtitle"><span>Обращаться на: daaweb.com/createEx0rder/</span></p>
 
             <div class="crud-container">
-                <div class="crud-header">
-                    <div class="crud-header__type-post">
-                        <p>POST</p>
-                        <p>/custom_id/{id_заявки}/</p>
+                <div class="crud-header" data-id="0">
+                    <div class="crud-header__type-post" data-id="0">
+                        <p data-id="0">POST</p>
+                        <p data-id="0">/custom_id/{id_заявки}/</p>
                     </div>
                     <div class="crud-header__arrow">
                         <img src="./img/arrow.svg" alt="arrow" data-id="0">
@@ -100,16 +113,16 @@
         <hr class="separator">
     </div>
 
-    <section class="crud">
+    <section class="crud" id="paymentСonfirmation">
         <div class="container">
             <h2>Подтверждение оплаты заявки</h2>
             <p class="crud-subtitle"><span>Обращаться на: daaweb.com/confirmOperatorExchangeOrderGroup/</span></p>
 
             <div class="crud-container">
-                <div class="crud-header">
-                    <div class="crud-header__type-post">
-                        <p>POST</p>
-                        <p>/custom_id/{id_заявки}/</p>
+                <div class="crud-header" data-id="1">
+                    <div class="crud-header__type-post" data-id="1">
+                        <p data-id="1">POST</p>
+                        <p data-id="1">/custom_id/{id_заявки}/</p>
                     </div>
                     <div class="crud-header__arrow">
                         <img src="./img/arrow.svg" alt="arrow" data-id="1">
@@ -144,16 +157,16 @@
         <hr class="separator">
     </div>
 
-    <section class="crud">
+    <section class="crud" id="getApplication">
         <div class="container">
-            <h2>Подтверждение оплаты заявки</h2>
-            <p class="crud-subtitle"><span>Обращаться на: daaweb.com/confirmOperatorExchangeOrderGroup/</span></p>
+            <h2>Получение списка заявок</h2>
+            <p class="crud-subtitle"><span>Обращаться на: daaweb.com/getExchangeOrdersSeller/</span></p>
 
             <div class="crud-container">
-                <div class="crud-header">
-                    <div class="crud-header__type-get">
-                        <p>GET</p>
-                        <p>/custom_id/{id_заявки}/</p>
+                <div class="crud-header" data-id="2">
+                    <div class="crud-header__type-get" data-id="2">
+                        <p data-id="2">GET</p>
+                        <p data-id="2">/custom_id/{id_заявки}/</p>
                     </div>
                     <div class="crud-header__arrow">
                         <img src="./img/arrow.svg" alt="arrow" data-id="2">
@@ -200,16 +213,16 @@
         <hr class="separator">
     </div>
 
-    <section class="crud">
+    <section class="crud" id="deleteApplication">
         <div class="container">
-            <h2>Подтверждение оплаты заявки</h2>
-            <p class="crud-subtitle"><span>Обращаться на: daaweb.com/confirmOperatorExchangeOrderGroup/</span></p>
+            <h2>Удаление группы заявок</h2>
+            <p class="crud-subtitle"><span>Обращаться на: daaweb.com/deleteExchangeOrderGroup/</span></p>
 
             <div class="crud-container">
-                <div class="crud-header">
-                    <div class="crud-header__type-get">
-                        <p>GET</p>
-                        <p>/custom_id/{id_заявки}/</p>
+                <div class="crud-header" data-id="3">
+                    <div class="crud-header__type-get" data-id="3">
+                        <p data-id="3">GET</p>
+                        <p data-id="3">/custom_id/{id_заявки}/</p>
                     </div>
                     <div class="crud-header__arrow">
                         <img src="./img/arrow.svg" alt="arrow" data-id="3">
@@ -250,16 +263,16 @@
         <hr class="separator">
     </div>
 
-    <section class="crud">
+    <section class="crud" id="getCourse">
         <div class="container">
-            <h2>Подтверждение оплаты заявки</h2>
-            <p class="crud-subtitle"><span>Обращаться на: daaweb.com/confirmOperatorExchangeOrderGroup/</span></p>
+            <h2>Получение актуального курса торговли</h2>
+            <p class="crud-subtitle"><span>Обращаться на: daaweb.com/getActualBtcSaleRate/</span></p>
 
             <div class="crud-container">
-                <div class="crud-header">
-                    <div class="crud-header__type-get">
-                        <p>GET</p>
-                        <p>/custom_id/{id_заявки}/</p>
+                <div class="crud-header" data-id="4">
+                    <div class="crud-header__type-get" data-id="4">
+                        <p data-id="4">GET</p>
+                        <p data-id="4">/custom_id/{id_заявки}/</p>
                     </div>
                     <div class="crud-header__arrow">
                         <img src="./img/arrow.svg" alt="arrow" data-id="4">
